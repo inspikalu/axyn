@@ -40,19 +40,18 @@ export default function Home() {
   const isFooterInView = useInView(footerRef, { once: true, margin: "0px 0px -100px 0px" })
 
   return (
-    <div className="min-h-screen overflow-hidden pb-40 md:pb-80">
-      <div className="bg-[url('/images/clouds-mobile.png')] md:bg-[url('/images/clouds.png')] bg-no-repeat bg-[bottom]">
+    <div className="min-h-screen overflow-hidden">
+      <div className="min-h-screen flex flex-col relative">
         <motion.div
           ref={heroRef}
           variants={sectionVariants}
           initial="hidden"
           animate={isHeroInView ? "visible" : "hidden"}
-          className="relative"
+          className="relative flex-1 flex flex-col"
         >
           <Hero />
           <ScatteredCircles />
         </motion.div>
-        <div className="w-full pt-[37px] md:pt-[160px]"></div>
       </div>
       <motion.div
         ref={howItWorksRef}
